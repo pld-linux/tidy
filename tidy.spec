@@ -1,4 +1,3 @@
-# $Revision: 1.22 $ $Date: 2003-05-28 13:02:15 $
 # TODO:
 #   - Add docs from http://tidy.sourceforge.net/docs/tidy_docs.tgz
 #   - Make all ac/am stuff. (Now only oryginal make is used)
