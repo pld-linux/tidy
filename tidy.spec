@@ -1,4 +1,4 @@
-# $Revision: 1.1 $ $Date: 1999-12-09 19:00:39 $
+# $Revision: 1.2 $ $Date: 1999-12-09 19:40:09 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl): Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
@@ -32,16 +32,18 @@ make CFLAGS="${RPM_OPT_FLAGS}"
 cp man_page.txt tidy.1
 
 %install
-install -d ${RPM_BUILD_ROOT}/usr/bin
-install -s tidy ${RPM_BUILD_ROOT}/usr/bin
-install -d ${RPM_BUILD_ROOT}/usr/man/man1
-install tidy.1 ${RPM_BUILD_ROOT}/usr/man/man1
+install -d ${RPM_BUILD_ROOT}%{_bindir}
+install -s tidy ${RPM_BUILD_ROOT}%{_bindir}
+install -d ${RPM_BUILD_ROOT}%{_mandir}/man1
+install tidy.1 ${RPM_BUILD_ROOT}%{_mandir}/man1
+gzip -9nf ${RPM_BUILD_ROOT}%{_mandir}/man1/*
+gzip -9nf Overview.html release-notes.html
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(644,root,root,755)
-%doc Overview.html release-notes.html grid.gif tidy.gif
-%doc /usr/man/man1/tidy.1
-%attr(755,root,root) /usr/bin/tidy
+%doc Overview.html.gz release-notes.html.gz grid.gif tidy.gif
+%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/tidy
