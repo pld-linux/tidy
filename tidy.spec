@@ -2,7 +2,7 @@ Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
 Version:	0.20031101
-Release:	1
+Release:	2
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
@@ -68,6 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+	
+install -d $RPM_BUILD_ROOT/%{_mandir}/man1
+mv htmldoc/man_page.txt $RPM_BUILD_ROOT/%{_mandir}/man1/tidy.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -77,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%{_mandir}/man*/*
 %doc htmldoc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
