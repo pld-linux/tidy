@@ -1,4 +1,4 @@
-# $Revision: 1.14 $ $Date: 2001-08-19 16:54:42 $
+# $Revision: 1.15 $ $Date: 2002-01-18 02:15:11 $
 %define w3cver 4aug00
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
