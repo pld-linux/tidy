@@ -1,4 +1,4 @@
-# $Revision: 1.5 $ $Date: 1999-12-11 15:18:25 $
+# $Revision: 1.6 $ $Date: 2000-03-28 16:55:08 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
