@@ -1,4 +1,4 @@
-# $Revision: 1.8 $ $Date: 2000-06-06 14:44:16 $
+# $Revision: 1.9 $ $Date: 2000-06-09 07:24:00 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
@@ -28,7 +28,7 @@ tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 %patch
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 cp man_page.txt tidy.1
 
 %install
