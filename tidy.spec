@@ -1,9 +1,9 @@
-# $Revision: 1.9 $ $Date: 2000-06-09 07:24:00 $
+# $Revision: 1.10 $ $Date: 2000-06-12 10:53:18 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
 Version:	30apr00
-Release:	2
+Release:	3
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 License:	BSD
