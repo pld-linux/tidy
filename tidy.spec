@@ -1,8 +1,8 @@
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	0.20030901
-Release:	2
+Version:	0.20031101
+Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
