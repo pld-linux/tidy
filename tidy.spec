@@ -1,13 +1,14 @@
-# $Revision: 1.13 $ $Date: 2001-08-16 08:25:19 $
+# $Revision: 1.14 $ $Date: 2001-08-19 16:54:42 $
 %define w3cver 4aug00
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
 Version:	20000804.%{w3cver}
 Release:	1
-Group:		Utilities/Text
-Group(pl):	Narzêdzia/Tekst
 License:	BSD
+Group:		Applications/Text
+Group(de):	Applikationen/Text
+Group(pl):	Aplikacje/Tekst
 Source0:	http://www.w3.org/People/Raggett/%{name}%{w3cver}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,17 +28,17 @@ tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 %setup -q -n %{name}%{w3cver}
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{rpmcflags}"
 cp man_page.txt tidy.1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -s tidy ${RPM_BUILD_ROOT}%{_bindir}
+install tidy ${RPM_BUILD_ROOT}%{_bindir}
 install tidy.1 ${RPM_BUILD_ROOT}%{_mandir}/man1
-gzip -9nf ${RPM_BUILD_ROOT}%{_mandir}/man1/* \
-	Overview.html release-notes.html
+
+gzip -9nf Overview.html release-notes.html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
