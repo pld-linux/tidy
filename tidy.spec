@@ -1,4 +1,4 @@
-# $Revision: 1.17 $ $Date: 2002-02-22 23:29:48 $
+# $Revision: 1.18 $ $Date: 2002-11-30 23:00:29 $
 %define w3cver 4aug00
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
@@ -36,13 +36,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install tidy ${RPM_BUILD_ROOT}%{_bindir}
 install tidy.1 ${RPM_BUILD_ROOT}%{_mandir}/man1
 
-gzip -9nf Overview.html release-notes.html
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Overview.html.gz release-notes.html.gz grid.gif tidy.gif
+%doc Overview.html release-notes.html grid.gif tidy.gif
 %{_mandir}/man1/*
 %attr(755,root,root) %{_bindir}/tidy
