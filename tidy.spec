@@ -1,4 +1,4 @@
-# $Revision: 1.6 $ $Date: 2000-03-28 16:55:08 $
+# $Revision: 1.7 $ $Date: 2000-04-01 11:15:42 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
@@ -10,7 +10,7 @@ License:	BSD
 Source:		http://www.w3.org/People/Raggett/%{name}%{version}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
 Patch:		%{name}%{version}-html.patch.gz
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tidy is utility for cleaning and pretty printing HTML files. It can help
