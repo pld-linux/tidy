@@ -5,7 +5,7 @@ Version:	0.20030702
 Release:	1
 License:	distributable
 Group:		Applications/Text
-Source0:        http://tidy.sf.net/src/tidy_src.tgz
+Source0:	http://tidy.sf.net/src/tidy_src.tgz
 # Source0-md5:	09e048c9aec1b72bc05bef97d1d28a89
 Source1:	http://tidy.sf.net/docs/tidy_docs.tgz
 # Source1-md5:	54ab968e177bc92495fce324c18f8b52
@@ -27,9 +27,9 @@ wy¶wietlania ¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w
 tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %package devel
-Summary:        Tidy header files
-Summary(pl):    Pliki nag³ówkowe biblioteki dla programu Tidy
-Group:          Development/Libraries
+Summary:	Tidy header files
+Summary(pl):	Pliki nag³ówkowe biblioteki dla programu Tidy
+Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
