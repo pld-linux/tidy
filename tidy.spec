@@ -1,4 +1,4 @@
-# $Revision: 1.21 $ $Date: 2003-05-25 06:27:20 $
+# $Revision: 1.22 $ $Date: 2003-05-28 13:02:15 $
 # TODO:
 #   - Add docs from http://tidy.sourceforge.net/docs/tidy_docs.tgz
 #   - Make all ac/am stuff. (Now only oryginal make is used)
@@ -11,6 +11,7 @@ Release:	0.9
 License:	distributable
 Group:		Applications/Text
 Source0:        http://tidy.sourceforge.net/src/tidy_src.tgz
+# Source0-md5:	3b1fae60e199e548ee0f2d33c9b0a3dd
 URL:	        http://tidy.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
