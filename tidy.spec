@@ -1,27 +1,27 @@
-# $Revision: 1.7 $ $Date: 2000-04-01 11:15:42 $
+# $Revision: 1.8 $ $Date: 2000-06-06 14:44:16 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	30nov99
+Version:	30apr00
 Release:	2
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 License:	BSD
-Source:		http://www.w3.org/People/Raggett/%{name}%{version}.tgz
+Source0:	http://www.w3.org/People/Raggett/%{name}%{version}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
-Patch:		%{name}%{version}-html.patch.gz
+Patch0:		%{name}%{version}-html.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tidy is utility for cleaning and pretty printing HTML files. It can help
-in keeping your WWW sources in unified format (case of tags) and proper
-encoding of different character sets.
+Tidy is utility for cleaning and pretty printing HTML files. It can
+help in keeping your WWW sources in unified format (case of tags) and
+proper encoding of different character sets.
 
 %description -l pl
-Tidy jest narzêdziem s³u¿±cym do czytelnego formatowania i wy¶wietlania
-¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w ¼ród³ach stron WWW,
-utrzymanie jednolitej konwecji (wielko¶æ liter w tagach) oraz poprawnego
-kodowania ró¿nych standardów znaków.
+Tidy jest narzêdziem s³u¿±cym do czytelnego formatowania i
+wy¶wietlania ¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w
+¼ród³ach stron WWW, utrzymanie jednolitej konwecji (wielko¶æ liter w
+tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %prep
 %setup -q -n %{name}%{version}
