@@ -1,4 +1,4 @@
-# $Revision: 1.3 $ $Date: 1999-12-09 19:51:46 $
+# $Revision: 1.4 $ $Date: 1999-12-09 20:13:18 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
@@ -44,7 +44,6 @@ gzip -9nf ${RPM_BUILD_ROOT}%{_mandir}/man1/* \
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(755,root,root) %{_bindir}/tidy
 %doc Overview.html.gz release-notes.html.gz grid.gif tidy.gif
 %{_mandir}/man1/*
 %attr(755,root,root) %{_bindir}/tidy
