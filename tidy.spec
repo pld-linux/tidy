@@ -3,6 +3,7 @@ Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
 Version:	0.20030702
 Release:	1
+Epoch:		1
 License:	distributable
 Group:		Applications/Text
 Source0:	http://tidy.sf.net/src/tidy_src.tgz
