@@ -1,4 +1,4 @@
-# $Revision: 1.16 $ $Date: 2002-02-01 00:01:52 $
+# $Revision: 1.17 $ $Date: 2002-02-22 23:29:48 $
 %define w3cver 4aug00
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
@@ -7,9 +7,6 @@ Version:	20000804.%{w3cver}
 Release:	1
 License:	BSD
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 Source0:	http://www.w3.org/People/Raggett/%{name}%{w3cver}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
