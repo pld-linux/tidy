@@ -24,7 +24,7 @@ proper encoding of different character sets.
 %description -l pl
 Tidy jest narzêdziem s³u¿±cym do czytelnego formatowania i
 wy¶wietlania ¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w
-¼ród³ach stron WWW, utrzymanie jednolitej konwecji (wielko¶æ liter w
+¼ród³ach stron WWW, utrzymanie jednolitej konwencji (wielko¶æ liter w
 tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %package devel
