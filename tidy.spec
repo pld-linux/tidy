@@ -1,13 +1,13 @@
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	0.20030702
+Version:	0.20030901
 Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
 Source0:	http://tidy.sf.net/src/tidy_src.tgz
-# Source0-md5:	09e048c9aec1b72bc05bef97d1d28a89
+# Source0-md5:	c9356a292f48a0d1db9d726e95115b8a
 Source1:	http://tidy.sf.net/docs/tidy_docs.tgz
 # Source1-md5:	54ab968e177bc92495fce324c18f8b52
 URL:	        http://tidy.sf.net/
