@@ -31,7 +31,7 @@ tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 Summary:	Tidy header files
 Summary(pl):	Pliki nag³ówkowe biblioteki dla programu Tidy
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description devel
 Tidy header files.
@@ -43,7 +43,7 @@ Pliki nag³ówkowe biblioteki dla programu Tidy.
 Summary:	Static Tidy library
 Summary(pl):	Statyczna biblioteka Tidy
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 Static Tidy library.
