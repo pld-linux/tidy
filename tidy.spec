@@ -9,10 +9,10 @@ Source0:        http://tidy.sf.net/src/tidy_src.tgz
 # Source0-md5:	09e048c9aec1b72bc05bef97d1d28a89
 Source1:	http://tidy.sf.net/docs/tidy_docs.tgz
 # Source1-md5:	54ab968e177bc92495fce324c18f8b52
+URL:	        http://tidy.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-URL:	        http://tidy.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,19 +27,31 @@ wy¶wietlania ¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w
 tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %package devel
-Summary:        Tidy header & static library files.
-Summary(pl):    Pliki nag³ówkowe i biblioteki dla programu Tidy.
-Group:          Developement
+Summary:        Tidy header files
+Summary(pl):    Pliki nag³ówkowe biblioteki dla programu Tidy
+Group:          Development/Libraries
+Requires:	%{name} = %{version}
 
 %description devel
-Tidy header & static library files
+Tidy header files.
 
-%description -l pl devel
-Pliki nag³ówkowe i biblioteki dla programu Tidy.
+%description devel -l pl
+Pliki nag³ówkowe biblioteki dla programu Tidy.
+
+%package static
+Summary:	Static Tidy library
+Summary(pl):	Statyczna biblioteka Tidy
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}
+
+%description static
+Static Tidy library.
+
+%description static -l pl
+Statyczna biblioteka Tidy.
 
 %prep
-%setup -q -n %{name}
-%setup -q -b1 -n %{name}
+%setup -q -n %{name} -b1
 
 %build
 cp -af build/gnuauto/* .
@@ -52,21 +64,28 @@ cp -af build/gnuauto/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
-    DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc htmldoc/*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/*.h
-%{_libdir}/*.a
-%{_libdir}/*.la
-%attr(755,root,root) %{_libdir}/*.so
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
