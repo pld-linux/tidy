@@ -1,15 +1,16 @@
-# $Revision: 1.10 $ $Date: 2000-06-12 10:53:18 $
+# $Revision: 1.11 $ $Date: 2000-11-29 16:54:42 $
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	30apr00
-Release:	3
+Version:	4aug00
+Release:	1
+Epoch:		1
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 License:	BSD
 Source0:	http://www.w3.org/People/Raggett/%{name}%{version}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
-Patch0:		%{name}%{version}-html.patch
+#Patch0:		%{name}30apr00-html.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +26,7 @@ tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %prep
 %setup -q -n %{name}%{version}
-%patch
+#%patch
 
 %build
 %{__make} CFLAGS="$RPM_OPT_FLAGS"
