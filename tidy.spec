@@ -1,4 +1,4 @@
-# $Revision: 1.19 $ $Date: 2003-01-14 18:51:10 $
+# $Revision: 1.20 $ $Date: 2003-02-07 12:26:04 $
 # TODO:
 #   - Add docs from http://tidy.sourceforge.net/docs/tidy_docs.tgz
 #   - Make all ac/am stuff. (Now only oryginal make is used)
@@ -6,7 +6,7 @@
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	20030101
+Version:	20030205
 Release:	0.9
 License:	distributable
 Group:		Applications/Text
