@@ -31,7 +31,7 @@ tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 Summary:	Tidy header files
 Summary(pl):	Pliki nag³ówkowe biblioteki dla programu Tidy
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Tidy header files.
@@ -43,7 +43,7 @@ Pliki nag³ówkowe biblioteki dla programu Tidy.
 Summary:	Static Tidy library
 Summary(pl):	Statyczna biblioteka Tidy
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static Tidy library.
@@ -69,8 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 	
-install -d $RPM_BUILD_ROOT/%{_mandir}/man1
-mv htmldoc/man_page.txt $RPM_BUILD_ROOT/%{_mandir}/man1/tidy.1
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
+mv -f htmldoc/man_page.txt $RPM_BUILD_ROOT%{_mandir}/man1/tidy.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,10 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_mandir}/man*/*
 %doc htmldoc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%{_mandir}/man1/*
 
 %files devel
 %defattr(644,root,root,755)
