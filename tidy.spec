@@ -1,17 +1,15 @@
-# $Revision: 1.12 $ $Date: 2001-05-03 01:14:03 $
+# $Revision: 1.13 $ $Date: 2001-08-16 08:25:19 $
+%define w3cver 4aug00
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	4aug00
+Version:	20000804.%{w3cver}
 Release:	1
-Epoch:		1
-Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(pl):	Aplikacje/Tekst
+Group:		Utilities/Text
+Group(pl):	Narzêdzia/Tekst
 License:	BSD
-Source0:	http://www.w3.org/People/Raggett/%{name}%{version}.tgz
+Source0:	http://www.w3.org/People/Raggett/%{name}%{w3cver}.tgz
 URL:		http://www.w3.org/People/Raggett/tidy/
-#Patch0:	%{name}30apr00-html.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,19 +24,20 @@ wy¶wietlania ¼ród³owego kodu HTML. U³atwia utrzymanie porz±dku w
 tagach) oraz poprawnego kodowania ró¿nych standardów znaków.
 
 %prep
-%setup -q -n %{name}%{version}
-#%patch
+%setup -q -n %{name}%{w3cver}
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
+cp man_page.txt tidy.1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install tidy ${RPM_BUILD_ROOT}%{_bindir}
-install man_page.txt ${RPM_BUILD_ROOT}%{_mandir}/man1/tidy.1
-gzip -9nf Overview.html release-notes.html
+install -s tidy ${RPM_BUILD_ROOT}%{_bindir}
+install tidy.1 ${RPM_BUILD_ROOT}%{_mandir}/man1
+gzip -9nf ${RPM_BUILD_ROOT}%{_mandir}/man1/* \
+	Overview.html release-notes.html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
