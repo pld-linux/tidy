@@ -1,15 +1,15 @@
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	0.20041025
+Version:	0.20050826
 Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
 Source0:	http://tidy.sourceforge.net/src/tidy_src.tgz
-# Source0-md5:	bf6cd062ed43babdba5ade9378be2db3
+# Source0-md5:	7c2ee7186b0384f92f65ec61266e0661
 Source1:	http://tidy.sourceforge.net/docs/tidy_docs.tgz
-# Source1-md5:	04338149bdd3e10753101bc5dff8acd8
+# Source1-md5:	2e6533fc48b077ff6243deaf21a781de
 URL:		http://tidy.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -68,9 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-	
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
-mv -f htmldoc/man_page.txt $RPM_BUILD_ROOT%{_mandir}/man1/tidy.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc htmldoc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%{_mandir}/man1/*
 
 %files devel
 %defattr(644,root,root,755)
