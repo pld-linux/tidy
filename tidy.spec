@@ -1,14 +1,16 @@
+%define		_snap	20061110
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl):	Narzêdzie do porz±dkowania kodu HTML
 Name:		tidy
-Version:	0.20051111
-Release:	1
+Version:	0.%{_snap}
+Release:	0.1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
-Source0:	http://tidy.sourceforge.net/src/tidy_src.tgz
-# Source0-md5:	1e39fafd6808978871346658c8da1454
-Source1:	http://tidy.sourceforge.net/docs/tidy_docs.tgz
+#Source0:	http://tidy.sourceforge.net/src/tidy_src.tgz
+Source0:	%{name}-%{_snap}.tar.bz2
+# Source0-md5:	872c0541d7693ff8a9c0961d67c5e871
+Source1:	http://tidy.sourceforge.net/docs/%{name}_docs.tgz
 # Source1-md5:	86de2f198e57399c063d2567b2a25628
 URL:		http://tidy.sourceforge.net/
 BuildRequires:	autoconf
@@ -80,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc htmldoc/*
+%doc tidy/htmldoc/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
