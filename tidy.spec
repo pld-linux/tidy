@@ -52,9 +52,11 @@ Static Tidy library.
 Statyczna biblioteka Tidy.
 
 %prep
-%setup -q -n %{name} -b1
+%setup -q -c -b1
+cd %{name}
 
 %build
+cd %{name}
 cp -af build/gnuauto/* .
 %{__libtoolize}
 %{__aclocal}
@@ -65,6 +67,7 @@ cp -af build/gnuauto/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
+cd %{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
