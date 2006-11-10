@@ -1,0 +1,3 @@
+- spec adapterized,
+- spec is now %{debug} ready,
+- added using rpm automation (do not pack in %install man pages).
