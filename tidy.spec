@@ -1,6 +1,6 @@
 %define		_snap	20061110
 Summary:	Utility to clean up and pretty print HTML files
-Summary(pl):	Narz阣zie do porz眃kowania kodu HTML
+Summary(pl.UTF-8):   Narz臋dzie do porz膮dkowania kodu HTML
 Name:		tidy
 Version:	0.%{_snap}
 Release:	0.1
@@ -23,34 +23,34 @@ Tidy is utility for cleaning and pretty printing HTML files. It can
 help in keeping your WWW sources in unified format (case of tags) and
 proper encoding of different character sets.
 
-%description -l pl
-Tidy jest narz阣ziem s硊勘cym do czytelnego formatowania i
-wy秝ietlania 紃骴硂wego kodu HTML. U砤twia utrzymanie porz眃ku w
-紃骴砤ch stron WWW, utrzymanie jednolitej konwencji (wielko舵 liter w
-tagach) oraz poprawnego kodowania r罂nych standard體 znak體.
+%description -l pl.UTF-8
+Tidy jest narz臋dziem s艂u偶膮cym do czytelnego formatowania i
+wy艣wietlania 藕r贸d艂owego kodu HTML. U艂atwia utrzymanie porz膮dku w
+藕r贸d艂ach stron WWW, utrzymanie jednolitej konwencji (wielko艣膰 liter w
+tagach) oraz poprawnego kodowania r贸偶nych standard贸w znak贸w.
 
 %package devel
 Summary:	Tidy header files
-Summary(pl):	Pliki nag丑wkowe biblioteki dla programu Tidy
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki dla programu Tidy
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Tidy header files.
 
-%description devel -l pl
-Pliki nag丑wkowe biblioteki dla programu Tidy.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe biblioteki dla programu Tidy.
 
 %package static
 Summary:	Static Tidy library
-Summary(pl):	Statyczna biblioteka Tidy
+Summary(pl.UTF-8):   Statyczna biblioteka Tidy
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static Tidy library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Tidy.
 
 %prep
