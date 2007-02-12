@@ -1,6 +1,6 @@
 %define		_snap	20061110
 Summary:	Utility to clean up and pretty print HTML files
-Summary(pl.UTF-8):   Narzędzie do porządkowania kodu HTML
+Summary(pl.UTF-8):	Narzędzie do porządkowania kodu HTML
 Name:		tidy
 Version:	0.%{_snap}
 Release:	0.1
@@ -31,7 +31,7 @@ tagach) oraz poprawnego kodowania różnych standardów znaków.
 
 %package devel
 Summary:	Tidy header files
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki dla programu Tidy
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki dla programu Tidy
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -43,7 +43,7 @@ Pliki nagłówkowe biblioteki dla programu Tidy.
 
 %package static
 Summary:	Static Tidy library
-Summary(pl.UTF-8):   Statyczna biblioteka Tidy
+Summary(pl.UTF-8):	Statyczna biblioteka Tidy
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
