@@ -78,15 +78,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc htmldoc/*
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_bindir}/tab2space
+%attr(755,root,root) %{_bindir}/tidy
+%attr(755,root,root) %{_libdir}/libtidy-0.99.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtidy-0.99.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/libtidy.so
+%{_libdir}/libtidy.la
+%{_includedir}/buffio.h
+%{_includedir}/platform.h
+%{_includedir}/tidy*.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libtidy.a
