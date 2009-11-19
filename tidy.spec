@@ -1,4 +1,4 @@
-%define		_snap	20080116
+%define		_snap	20091119
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl.UTF-8):	Narzędzie do porządkowania kodu HTML
 Name:		tidy
@@ -7,10 +7,11 @@ Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
-#Source0:	http://tidy.sourceforge.net/src/tidy_src.tgz
-# tidy projects no longer releases tarballs. Use debian ones
-Source0:	http://ftp.de.debian.org/debian/pool/main/t/tidy/tidy_20080116cvs.orig.tar.gz
-# Source0-md5:	ff4558a920cfd7247f17e79b143f5a69
+# tidy projects no longer releases tarballs.
+# cvs -z3 -d:pserver:anonymous@tidy.cvs.sourceforge.net:/cvsroot/tidy export -D 2009-11-19 tidy
+# tar -cf tidy-20091119.tar tidy;xz -9 -e tidy-20091119.tar
+Source0:	tidy-%{_snap}.tar.xz
+# Source0-md5:	0ca49cf79b4f3d25a080234a0bbf8eee
 URL:		http://tidy.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -53,13 +54,10 @@ Static Tidy library.
 Statyczna biblioteka Tidy.
 
 %prep
-%setup -q -n %{name}-%{_snap}cvs
+%setup -q -n %{name}
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__automake}
-%{__autoconf}
+sh build/gnuauto/setup.sh
 %configure
 %{__make}
 
