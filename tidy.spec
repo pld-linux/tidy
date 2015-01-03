@@ -12,6 +12,7 @@ Group:		Applications/Text
 # tar -cf tidy-20091119.tar tidy;xz -9 -e tidy-20091119.tar
 Source0:	tidy-%{_snap}.tar.xz
 # Source0-md5:	0ca49cf79b4f3d25a080234a0bbf8eee
+Patch0:		format-security.patch
 URL:		http://tidy.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -57,6 +58,7 @@ Statyczna biblioteka Tidy.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 sh build/gnuauto/setup.sh
