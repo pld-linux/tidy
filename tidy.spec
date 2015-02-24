@@ -3,7 +3,7 @@ Summary:	Utility to clean up and pretty print HTML files
 Summary(pl.UTF-8):	Narzędzie do porządkowania kodu HTML
 Name:		tidy
 Version:	0.%{_snap}
-Release:	1
+Release:	2
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
