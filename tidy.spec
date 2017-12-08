@@ -1,24 +1,17 @@
-%define		_snap	20091119
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl.UTF-8):	Narzędzie do porządkowania kodu HTML
 Name:		tidy
-Version:	0.%{_snap}
-Release:	2
+Version:	5.6.0
+Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
-# tidy projects no longer releases tarballs.
-# cvs -z3 -d:pserver:anonymous@tidy.cvs.sourceforge.net:/cvsroot/tidy export -D 2009-11-19 tidy
-# tar -cf tidy-20091119.tar tidy;xz -9 -e tidy-20091119.tar
-Source0:	tidy-%{_snap}.tar.xz
-# Source0-md5:	0ca49cf79b4f3d25a080234a0bbf8eee
-Patch0:		format-security.patch
-URL:		http://tidy.sourceforge.net/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool
-BuildRequires:	tar >= 1:1.22
-BuildRequires:	xz
+#Source0Download: https://github.com/htacg/tidy-html5/releases
+Source0:	https://github.com/htacg/tidy-html5/archive/5.6.0/tidy-html5-%{version}.tar.gz
+# Source0-md5:	85c8a163d9ece6a02fe12bc9bddbc455
+URL:		http://www.html-tidy.org/
+BuildRequires:	cmake >= 2.8.12
+BuildRequires:	libxslt-progs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,19 +50,29 @@ Static Tidy library.
 Statyczna biblioteka Tidy.
 
 %prep
-%setup -q -n %{name}
-%patch0 -p1
+%setup -q -n tidy-html5-%{version}
 
 %build
-sh build/gnuauto/setup.sh
-%configure
+install -d build
+cd build
+# .pc file template expects relative {INCLUDE,LIB}_INSTALL_DIR
+%cmake .. \
+	-DBUILD_TAB2SPACE=ON \
+	-DINCLUDE_INSTALL_DIR=include/tidy \
+	-DLIB_INSTALL_DIR=%{_lib} \
+	-DTIDY_COMPAT_HEADERS=ON \
+	-DTIDY_CONSOLE_SHARED=ON
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# not installed
+install build/tab2space $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -79,20 +82,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc htmldoc/*
+%doc README.md README/{API_AND_NAMESPACE.md,ATTRIBUTES.md,LICENSE.md,MESSAGES.md,OPTIONS.md,TAGS.md}
 %attr(755,root,root) %{_bindir}/tab2space
 %attr(755,root,root) %{_bindir}/tidy
-%attr(755,root,root) %{_libdir}/libtidy-0.99.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libtidy-0.99.so.0
+%attr(755,root,root) %{_libdir}/libtidy.so.%{version}
+%attr(755,root,root) %ghost %{_libdir}/libtidy.so.5
+%{_mandir}/man1/tidy.1*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtidy.so
-%{_libdir}/libtidy.la
-%{_includedir}/buffio.h
-%{_includedir}/platform.h
-%{_includedir}/tidy*.h
+%{_includedir}/tidy
+%{_pkgconfigdir}/tidy.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libtidy.a
+%{_libdir}/libtidys.a
