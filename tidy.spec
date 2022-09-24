@@ -1,14 +1,14 @@
 Summary:	Utility to clean up and pretty print HTML files
 Summary(pl.UTF-8):	Narzędzie do porządkowania kodu HTML
 Name:		tidy
-Version:	5.6.0
+Version:	5.8.0
 Release:	1
 Epoch:		1
 License:	distributable
 Group:		Applications/Text
 #Source0Download: https://github.com/htacg/tidy-html5/releases
-Source0:	https://github.com/htacg/tidy-html5/archive/5.6.0/tidy-html5-%{version}.tar.gz
-# Source0-md5:	85c8a163d9ece6a02fe12bc9bddbc455
+Source0:	https://github.com/htacg/tidy-html5/archive/%{version}/tidy-html5-%{version}.tar.gz
+# Source0-md5:	0f6c55ef651e258adbe5750f555af50f
 URL:		http://www.html-tidy.org/
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	libxslt-progs
@@ -82,11 +82,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.md README/{API_AND_NAMESPACE.md,ATTRIBUTES.md,LICENSE.md,MESSAGES.md,OPTIONS.md,TAGS.md}
+%doc README.md README/{API_AND_NAMESPACE.md,ATTRIBUTES.md,CHANGELOG.md,LICENSE.md,MESSAGES.md,OPTIONS.md,TAGS.md}
 %attr(755,root,root) %{_bindir}/tab2space
 %attr(755,root,root) %{_bindir}/tidy
 %attr(755,root,root) %{_libdir}/libtidy.so.%{version}
-%attr(755,root,root) %ghost %{_libdir}/libtidy.so.5
+%attr(755,root,root) %ghost %{_libdir}/libtidy.so.58
 %{_mandir}/man1/tidy.1*
 
 %files devel
@@ -97,4 +97,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libtidys.a
+%{_libdir}/libtidy.a
